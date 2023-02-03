@@ -28,13 +28,9 @@ public class ClienteServiceImpl implements ClienteService{
     @Override
     public void inserir(Cliente cliente){
         //FIXME Verificar se o Endereço do Cliente já existe (pelo CEP)
-        //FIXME
-        //FIXME
+        //FIXME Caso não exista, integrar com o ViaCep e persistir o retorno
+        //FIXME Inserir Cliente, vinculando o Endereço (novo ou existente)
     }
-
-
-
-
 
     @Override
     public void atualizar (Long id, Cliente cliente){
@@ -42,6 +38,10 @@ public class ClienteServiceImpl implements ClienteService{
         //FIXME Verificar se o endereço do cliente já existe (pelo CEP)
         //FIXME Caso não exista, integrar com o ViaCep e persistir o retorno
         //FIXME Alterar Cliente, vinculando o endereço (novo ou existente)
+    }
+
+    public void deletar(Long id){
+        //FIXME Deletar Cliente por Id
     }
 
 }

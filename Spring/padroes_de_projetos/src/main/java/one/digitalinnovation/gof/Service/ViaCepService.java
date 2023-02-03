@@ -3,10 +3,13 @@ package one.gigitalinnovation.gof.service;
 import one.gigitalinnovation.gof.model.Cliente;
 
 /*
-* Interface que define o padrão <b>Strategy</b> no domínio do cliente. Com
-* isso, se necessário, podemos ter múltiplas implementações dessa mesma interface
+* Cliente HTTP,criado via <b>OpenFeign</b>, para o consumo da API do <b>ViaCep</b>
 *
 */
 
+@FeignClient(name = "viacep", url = "https://viacep.com.br/ws")
 public interface ViaCepService {
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{cep}/json/")
+    Endereco consultarCep(@PathVariable("cep") String cep)
 }
